@@ -1,0 +1,25 @@
+Instructions for installation:
+* cd to the DirUtils directory
+  $ cd DirUtils
+* Run install.sh with root permission
+  $ sudo ./install.sh
+* Source the file ./DirUtils.sh
+  $ source ./DirUtils.sh
+  
+  
+Usage:
+* to store current directory to a variable:
+  $ std [variable name]
+* to change to a stored directory
+  $ chd [variable name]
+* to list all stored directories
+  $ lsd
+* to clear all stored directories
+  $ cld
+
+Note: 
+1. Variable name should contain any special characters or space. It can contain only alpha-numeric characters.
+2. Variable name should not exceed 10 characters
+3. Storage of variable is permanent. It will reside even after reboot.
+4. Variables can be overridden by assigning to a new directory
+
