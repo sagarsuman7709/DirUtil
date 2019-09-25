@@ -4,6 +4,7 @@ It is a directory switching tool. This tool is very useful while frequently chan
 DirUtil comes with 4 commands:
 1. std
 2. chd
+3. prd
 3. lsd
 4. cld
 
