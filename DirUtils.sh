@@ -1,9 +1,9 @@
 DIR_FILE=/etc/DirUtils/.dir.db
-chdr()
+chd()
 {
         FOUND=false
 	if [ "$#" -ne 1 ]; then
-		echo "Usage: chdr VARIABLE" >&2
+		echo "Usage: chd VARIABLE" >&2
 		return 0
 	fi
         if [ ! -f "$DIR_FILE" ]; then
@@ -25,8 +25,33 @@ chdr()
         fi
 }      
 
+prd()
+{
+        FOUND=false
+	if [ "$#" -ne 1 ]; then
+		echo "Usage: prd VARIABLE" >&2
+		return 0
+	fi
+        if [ ! -f "$DIR_FILE" ]; then
+                echo "desired path not stored"
+                return 0
+        fi
+        while read i;
+        do
+                x=`echo "$i" | cut -d' '  -f1`
+                if [[ $x == "$1" ]]; then
+                        FOUND=true
+                        y=`echo "$i" | cut -d' '  -f2`
+                        echo $y
+                        break
+                fi
+        done < $DIR_FILE
+        if [ $FOUND = false ]; then
+                echo "specified variable not found">&2
+        fi
+}
 
-stdr()
+std()
 {
 	if [ "$#" -ne 1 ]; then
 		echo "Usage: stdr VARIABLE" >&2
@@ -48,12 +73,12 @@ stdr()
         fi
 }
 
-cldr()
+cld()
 {
 	cat /dev/null > $DIR_FILE
 }	
 
-lsdr()
+lsd()
 {
 	printf 'Variable%-13spath stored\n' 
 	printf '================================\n' 
