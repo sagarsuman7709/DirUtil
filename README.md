@@ -16,6 +16,10 @@ this will store the present directory in a variable <br />
 this command is used to jump to a directory by specifying the variable name. <br />
 Syntax is: chd [variable name] <br />
 
+## prd
+this command is used to print value stored in a variable. <br />
+Syntax is: prd [variable name] <br />
+
 ## lsd
 this command is used to list all the stored variables. <br />
 Syntax is: lsd
